@@ -58,7 +58,7 @@ def launch():
             y1 = y + self.c.winfo_height()
             img = PIL.ImageGrab.grab()
             img = img.crop((x, y, x1, y1))
-            img = img.resize((64, 64), PIL.Image.ANTIALIAS)  # resize to 64x64 pixels
+            img = img.resize((400, 400), PIL.Image.ANTIALIAS) 
             img.save("dist.png")
             self.res = str(model.predict("dist.png"))
 
@@ -66,20 +66,21 @@ def launch():
             if self.res == 'square':
                 self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula : 4 × side " + "\n Area formula: side^2" 
             elif self.res == 'circle':
-                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: 2 × pi × radius " + "\n Area formula:	pi × radius2" 
+                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: 2 × pi × radius " + "\n Area formula:	pi × radius^2" 
             elif self.res == 'triangle':
-                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: side1 + side2 + side3 " + "\n Area formula: base × height / 2"
+                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: side1 + side2 + side3 " + "\n Area formula: ½ (a + b) h"
             elif self.res == 'parallelogram':
-                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: side1 + side2 + side3 " + "\n Area formula: base × height / 2"
+                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula:  side1 + side2 + side3 + side4 " + "\n Area formula: base × height"
             elif self.res == 'rectangle':
-                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: side1 + side2 + side3 " + "\n Area formula: base × height / 2"
+                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: side1 + side2 + side3 + side4" + "\n Area formula: base × height"
             elif self.res == 'rhombus':
-                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: side1 + side2 + side3 " + "\n Area formula: base × height / 2"
+                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula:  4 × side " + "\n Area formula: base × height units^2"
             elif self.res == 'trapezoid':
-                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: side1 + side2 + side3 " + "\n Area formula: base × height / 2"
+                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula:  side1 + side2 + side3 + side4 " + "\n Area formula: [(a + b)/2] × height"
             
             if self.res=='circle':
-                image = cv2.imread(r'Dataset\dataset\train\circle\circle-2.jpg')
+                image = cv2.imread(r'Dataset\dataset\result\circle.png')
+                image = cv2.resize(image, (440, 440))
                 cv2.imshow('circle', image)  
                 key=cv2.waitKey(0)
             
@@ -87,7 +88,8 @@ def launch():
                     cv2.destroyWindow("circle")
             
             elif self.res=='square':
-                image = cv2.imread(r'Dataset\dataset\train\square\square-2.jpg')
+                image = cv2.imread(r'Dataset\dataset\result\square.png')
+                image = cv2.resize(image, (440, 440))
                 cv2.imshow('square', image)  
                 key=cv2.waitKey(0)
             
@@ -95,14 +97,16 @@ def launch():
                     cv2.destroyWindow("square")
             elif self.res=='triangle':
                 
-                image = cv2.imread(r'Dataset\dataset\train\triangle\triangle-2.jpg')
+                image = cv2.imread(r'Dataset\dataset\result\triangle.png')
+                image = cv2.resize(image, (440, 440))
                 cv2.imshow('triangle', image)  
                 key=cv2.waitKey(0)
             
                 if (key & 0xFF) == ord("t"):
                     cv2.destroyWindow("triangle")
             elif self.res=='parallelogram':
-                image = cv2.imread(r'Dataset\dataset\train\triangle\triangle-2.jpg')
+                image = cv2.imread(r'Dataset\dataset\result\parallelogram.png')
+                image = cv2.resize(image, (440, 440))
                 cv2.imshow('parallelogram', image)  
                 key=cv2.waitKey(0)
             
@@ -110,23 +114,24 @@ def launch():
                     cv2.destroyWindow("parallelogram")
             elif self.res=='rectangle':
                 
-                image = cv2.imread(r'Dataset\dataset\train\rectangle\rectangle-2.jpg')
+                image = cv2.imread(r'Dataset\dataset\result\rectangle.png')
+                image = cv2.resize(image, (440, 440))
                 cv2.imshow('rectangle', image)  
                 key=cv2.waitKey(0)
             
                 if (key & 0xFF) == ord("r"):
                     cv2.destroyWindow("rectangle")
             elif self.res=='rhombus':
-                
-                image = cv2.imread(r'Dataset\dataset\train\rhombus\rhombus-2.jpg')
+                image = cv2.imread(r'Dataset\dataset\result\rhombus.png')
+                image = cv2.resize(image, (440, 440))
                 cv2.imshow('rhombus', image)  
                 key=cv2.waitKey(0)
             
                 if (key & 0xFF) == ord("r"):
                     cv2.destroyWindow("rhombus")
             elif self.res=='trapezoid':
-                
-                image = cv2.imread(r'Dataset\dataset\train\trapezoid\trapezoid-2.jpg')
+                image = cv2.imread(r'Dataset\dataset\result\trapezoid.png')
+                image = cv2.resize(image, (440, 440))
                 cv2.imshow('trapezoid', image)  
                 key=cv2.waitKey(0)
             
