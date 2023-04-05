@@ -12,7 +12,7 @@
 			box-shadow: 0px 8px 4px rgb(183, 0, 255);
 			overflow: hidden;
 			padding-left:20px;
-			font-family: 'Josefin Sans';
+			font-family: "Century Gothic";
 			font-size: 2vw;
 			width: 100%;
 			height:8%;
@@ -20,7 +20,7 @@
 		}
 		.topnav {
   overflow: hidden;
-  background-color: black;
+  background-color: #091425; 
 }
 
 .text-center {
@@ -38,15 +38,17 @@
   font-size: 18px;
 }
 
-.topnav-right a:hover {
-  background-color: #ddd;
-  color: black;
+.topnav-right a.active {
+  background-color: #ffa07a;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.topnav-right a.active {
-  background-color: #565961;
-  color: white;
-  font-style: bold;
+.topnav-right a.active:hover {
+  background-color: #ff7f50;
 }
 
 .topnav-right {
@@ -56,21 +58,22 @@
 
 body {
 
-  background-color: ;
+  background-color: #F5D6C5;
   background-repeat: no-repeat;
   background-size:cover;
   background-position: 0px 0px;
   }
-  .button {
-  background-color: #091425; 
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  border-radius: 16px;
+.button {
+background-color: #EE6352;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 12px;
+border-radius: 16px;
+
 }
 .button:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -86,17 +89,6 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button {
-  background-color: #091425;
-  color: white;
-  padding: 14px 20px;
-  margin-bottom:10px;
-  border: none;
-  cursor: pointer;
-  width: 17%;
-  border-radius:4px;
-  font-family:Montserrat;
-}
 
 button:hover {
   opacity: 0.8;
@@ -139,15 +131,13 @@ span.psw {
      width: 100%;
   }
 }
-
 .home{
-	margin:80px;
-	
-  width: 84%;
-  height: 500px;
+  margin:80px;
+  width: 90%;
+  height: 600px;
   padding-top:10px;
-  padding-left: 30px;  
-  
+  padding-left: 50px;  
+  text-align:center;
 }
 .login{
 	margin:80px;
@@ -223,7 +213,7 @@ html, body{
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #565961;
+    background-color: #687db8;
 }
 body{
     margin: 0;
@@ -236,6 +226,21 @@ img{
 h1,h2,p{
     margin: 0;
 }
+
+h1 {
+    padding-top: 50px;
+    color: black;
+    animation: expand 2s infinite alternate;
+  }
+  
+  @keyframes expand {
+    from {
+      font-size: 40px;
+    }
+    to {
+      font-size: 60px;
+    }
+  }
 
 .facilities {
   width: 80%;
@@ -276,72 +281,58 @@ h1,h2,p{
   padding: 50px;
 }
 
-.rectangle {
-  height: 100px;
-  width: 200px;
-  background-color: orange;
-  margin-top: 100px;
-  margin-left: 100px;
-  -webkit-animation:spin 4s linear infinite;
-  -moz-animation:spin 4s linear infinite;
-   animation:spin 4s linear infinite;
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.left, .center, .right, .shape {
+  flex: 1;
+  margin: 10px;
+}
+.shape {
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transform-origin: center center;
 }
 
 
-.square {
-  height: 100px;
-  width: 100px;
-  background-color: green;
-  
-  margin-top: 100;
-  margin-left: 100;
-  -webkit-animation:spin 4s linear infinite;
-  -moz-animation:spin 4s linear infinite;
-   animation:spin 4s linear infinite;
-
-}
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
-.circle {
-  height: 100px;
-  width: 100px;
-  background-color: blue;
-  border-radius: 100%;
-  margin-top: 50;
-  margin-left: 100;
-  -webkit-animation:spin 4s linear infinite;
-  -moz-animation:spin 4s linear infinite;
-  animation:spin 4s linear infinite;
-}
-.triangle-up {
-    width: 0;
-    height: 0;
-    color: orange;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid white;
-    margin-top: 100;
-    margin-left: 100;
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
-}
+@keyframes changeShape {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }
 
 
 
 </style>
 <body>
 <div class="header">    
-  <div style="width:50%;float:left;font-size:2vw;text-align:left;color:rgb(255, 255, 255); padding-top:1%;padding-left:5%;font-weight:bold;">Smart Maths Tutor</div>
+  <div style="width:50%;float:left;font-size:2vw;text-align:left;color:rgb(255, 255, 255); padding-top:1%;padding-left:5%;font-weight:bold;">Fun with AI Geometry</div>
 
   <div class="topnav-right"style="padding-top:0.5%;">
     
     <a class="active" href="{{ url_for('home')}}">Home</a>
     <a href="{{ url_for('intro')}}">ABOUT</a>
-    <a href="{{ url_for('launch')}}">LEARN SHAPE</a>
+    <a href="{{ url_for('launch')}}">Play</a>
   </div>
 </div>
     
@@ -353,46 +344,59 @@ h1,h2,p{
 
 <section class="facilities">
             
-            <p>With Smart Mathematics Tutor learning shapes can become easy and fun<br>
-              Interactive Learning has evolved out of the hyper-growth in the <br> use of digital technology and virtual communication,
+            <p style="font-family: 'Tahoma';">With AI, learning shapes can become easy and fun<br>
+              Interactive Learning has evolved out of the hyper-growth in the <br> use of digital technology and virtual communication!
 
-              <h1 style="padding-top: 50px;">SHAPES</h1>  
+              <h1 style="padding-top: 50px; color: black;">SHAPES</h1>  
             </p>
 
             
         </section>
   </header>
-  <div class="container" id="main-content">
-    <section class="row">
-      <div class="left" id="Square">
-        <article>
-          <h3 class="text-center">Square</h3>
-          <div class="square"></div>
-        </article>
+  <div class="home">
+    <div style="text-align:center; display:flex; justify-content:center;">
+      <div style="display:inline-block; margin-right: 50px;">
+        <svg width="200" height="200">
+          <rect x="20" y="20" width="160" height="160" style="fill:blue;stroke-width:3;stroke:rgb(0,0,0)" class="shape" />
+        </svg>
+        <br />
+        <span style="font-size: 24px; font-weight: bold;">Square</span>
       </div>
-  
-      <div class="center" id="Rectangle">
-        <article>
-          <h3 class="text-center">Rectangle</h3>
-          <div class="rectangle"></div>
-        </article>
+      <div style="display:inline-block; margin-right: 50px;">
+        <svg width="200" height="200">
+          <circle cx="100" cy="100" r="90" stroke="green" stroke-width="4" fill="yellow" class="shape" />
+        </svg>
+        <br />
+        <span style="font-size: 24px; font-weight: bold;">Circle</span>
       </div>
-  
-      <div class="right" id="Circle">
-        <article>
-          <h3 class="text-center">Circle</h3>
-          <div class="circle"></div>
-        </article>
+      <div style="display:inline-block; margin-right: 50px;">
+        <svg width="200" height="200">
+          <polygon points="100 50 160 160 40 160"
+          style="fill:lime;stroke:purple;stroke-width:1" class="shape" />
+        </svg>
+        <br />
+        <span style="font-size: 24px; font-weight: bold;">Triangle</span>
       </div>
-  
-      <div class="shape" id="Triangle">
-        <article>
-          <h3 class="text-center">Triangle</h3>
-          <div class="triangle-up"></div>
-        </article>
+      <div style="display:inline-block; margin-right: 50px;">
+        <svg width="200" height="200">
+          <polygon points="100 40 180 100 100 180 20 100"
+          style="fill:orange;stroke:purple;stroke-width:1" class="shape" />
+        </svg>
+        <br />
+        <span style="font-size: 24px; font-weight: bold;">Rhombus</span>
       </div>
-    </section>
+      <div style="display:inline-block;">
+        <svg width="200" height="200">
+          <polygon points="50 160 150 160 120 50 80 50"
+          style="fill:red;stroke:purple;stroke-width:1" class="shape" />
+        </svg>
+        <br />
+        <span style="font-size: 24px; font-weight: bold;">Trapezoid</span>
+      </div>
     </div>
+  </div>
+  
+  
 
 </body>
 </html>
