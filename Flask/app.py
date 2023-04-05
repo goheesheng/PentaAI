@@ -69,10 +69,7 @@ def launch():
                 self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: 2 × pi × radius " + "\n Area formula:	pi × radius^2" 
             elif self.res == 'triangle':
                 self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: side1 + side2 + side3 " + "\n Area formula: ½ (a + b) h"
-            elif self.res == 'parallelogram':
-                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula:  side1 + side2 + side3 + side4 " + "\n Area formula: base × height"
-            elif self.res == 'rectangle':
-                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: side1 + side2 + side3 + side4" + "\n Area formula: base × height"
+
             elif self.res == 'rhombus':
                 self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula:  4 × side " + "\n Area formula: base × height units^2"
             elif self.res == 'trapezoid':
@@ -104,23 +101,7 @@ def launch():
             
                 if (key & 0xFF) == ord("t"):
                     cv2.destroyWindow("triangle")
-            elif self.res=='parallelogram':
-                image = cv2.imread(r'Dataset\dataset\result\parallelogram.png')
-                image = cv2.resize(image, (440, 440))
-                cv2.imshow('parallelogram', image)  
-                key=cv2.waitKey(0)
-            
-                if (key & 0xFF) == ord("p"):
-                    cv2.destroyWindow("parallelogram")
-            elif self.res=='rectangle':
-                
-                image = cv2.imread(r'Dataset\dataset\result\rectangle.png')
-                image = cv2.resize(image, (440, 440))
-                cv2.imshow('rectangle', image)  
-                key=cv2.waitKey(0)
-            
-                if (key & 0xFF) == ord("r"):
-                    cv2.destroyWindow("rectangle")
+
             elif self.res=='rhombus':
                 image = cv2.imread(r'Dataset\dataset\result\rhombus.png')
                 image = cv2.resize(image, (440, 440))
