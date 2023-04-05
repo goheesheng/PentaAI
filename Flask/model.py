@@ -13,12 +13,10 @@ def predict(InputImg):
     prediction = model.predict(x)
     predicted_class = np.argmax(prediction)
     index= {0: 'circle',
-        1: 'parallelogram',
-        2: 'rectangle',
-        3: 'rhombus',
-        4: 'square',
-        5: 'trapezoid',
-        6: 'triangle'}
+        1: 'rhombus',
+        2: 'square',
+        3: 'trapezoid',
+        4: 'triangle'}
     print(f"Key: {predicted_class}")
     result=str(index[predicted_class])
     return result
