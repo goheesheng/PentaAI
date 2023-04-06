@@ -12,7 +12,7 @@ Say goodbye to unproductive work and hello to a smarter way of learning with AI.
 [Shape Dataset from Kaggle](https://www.kaggle.com/smeschke/four-shapes)
 
 # Link to the Video Demonstration
-
+[Video] https://drive.google.com/file/d/14mBXYgFreoSN63IL3vsBGbt-XoJ7J3WM/view?usp=share_link
 
 # Libraries Used
 * Tensorflow
@@ -21,7 +21,7 @@ Say goodbye to unproductive work and hello to a smarter way of learning with AI.
 * Numpy
 * Matplotlib
 
-# Demo
+# Demo Snapshots
 ![Sample1](https://github.com/goheesheng/PentaAI/blob/main/sample(1).png?raw=true)
 
 ![Sample2](https://github.com/goheesheng/PentaAI/blob/main/sample(2).png?raw=true)
