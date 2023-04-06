@@ -1,5 +1,4 @@
-# PentaAI
- PentaAI Hackathon
+# Penta Hackathon
 
 # Introducing Fun with AI Geometry
 
