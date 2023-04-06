@@ -21,7 +21,10 @@ Say goodbye to unproductive work and hello to a smarter way of learning with AI.
 * Numpy
 * Matplotlib
 
-# Sample
+# Demo
+![Sample1](https://github.com/goheesheng/PentaAI/blob/main/sample(1).png?raw=true)
 
-![Alt text](https://github.com/goheesheng/PentaAI/blob/main/sample(1).png?raw=true)
+![Sample2](https://github.com/goheesheng/PentaAI/blob/main/sample(2).png?raw=true)
+
+![Sample3](https://github.com/goheesheng/PentaAI/blob/main/sample(3).png?raw=true)
 
