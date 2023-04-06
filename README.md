@@ -9,7 +9,7 @@ Our web-based system lets you draw shapes like squares, triangles, and circles, 
 Say goodbye to unproductive work and hello to a smarter way of learning with AI.
 
 # Link to the dataset
-[Shape Dataset from Kaggle](https://drive.google.com/drive/folders/1LB1i53cnWHlmIEnEI2C3gtYALTXX4Awa)
+[Shape Dataset from Kaggle](https://www.kaggle.com/smeschke/four-shapes)
 
 # Link to the Video Demonstration
 
