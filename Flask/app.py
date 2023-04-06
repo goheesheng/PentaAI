@@ -37,7 +37,7 @@ def launch():
             f1 = Frame(self.master, padx=5, pady=5)
             Label(f1,text="Shape Maths Tutor",fg="red",font=("",15,"bold")).pack(pady=10)
             Label(f1,text="Draw a shape to get its formula",fg="red",font=("",15)).pack()
-            Label(f1,text="(Circle,Square,Triangle,Rhombus,Parallelogram, Rectangle,Trapezoid)",fg="red",font=("",15)).pack()
+            Label(f1,text="(Circle,Square,Triangle)",fg="red",font=("",15)).pack()
             self.pr = Label(f1,text="Prediction: None",fg="red",font=("",20,"bold"))
             self.pr.pack(pady=20)
             
@@ -69,14 +69,9 @@ def launch():
                 self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: 2 × pi × radius " + "\n Area formula:	pi × radius^2" 
             elif self.res == 'triangle':
                 self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula: side1 + side2 + side3 " + "\n Area formula: ½ (a + b) h"
-
-            elif self.res == 'rhombus':
-                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula:  4 × side " + "\n Area formula: base × height units^2"
-            elif self.res == 'trapezoid':
-                self.pr['text'] = self.pr['text'] + self.res + "\n Perimeter formula:  side1 + side2 + side3 + side4 " + "\n Area formula: [(a + b)/2] × height"
             
             if self.res=='circle':
-                image = cv2.imread(r'Dataset\dataset\result\circle.png')
+                image = cv2.imread(r'Dataset\dataset\dataset\result\circle.png')
                 image = cv2.resize(image, (440, 440))
                 cv2.imshow('circle', image)  
                 key=cv2.waitKey(0)
@@ -85,7 +80,7 @@ def launch():
                     cv2.destroyWindow("circle")
             
             elif self.res=='square':
-                image = cv2.imread(r'Dataset\dataset\result\square.png')
+                image = cv2.imread(r'Dataset\dataset\dataset\result\square.png')
                 image = cv2.resize(image, (440, 440))
                 cv2.imshow('square', image)  
                 key=cv2.waitKey(0)
@@ -94,7 +89,7 @@ def launch():
                     cv2.destroyWindow("square")
             elif self.res=='triangle':
                 
-                image = cv2.imread(r'Dataset\dataset\result\triangle.png')
+                image = cv2.imread(r'Dataset\dataset\dataset\result\triangle.png')
                 image = cv2.resize(image, (440, 440))
                 cv2.imshow('triangle', image)  
                 key=cv2.waitKey(0)
@@ -102,22 +97,7 @@ def launch():
                 if (key & 0xFF) == ord("t"):
                     cv2.destroyWindow("triangle")
 
-            elif self.res=='rhombus':
-                image = cv2.imread(r'Dataset\dataset\result\rhombus.png')
-                image = cv2.resize(image, (440, 440))
-                cv2.imshow('rhombus', image)  
-                key=cv2.waitKey(0)
-            
-                if (key & 0xFF) == ord("r"):
-                    cv2.destroyWindow("rhombus")
-            elif self.res=='trapezoid':
-                image = cv2.imread(r'Dataset\dataset\result\trapezoid.png')
-                image = cv2.resize(image, (440, 440))
-                cv2.imshow('trapezoid', image)  
-                key=cv2.waitKey(0)
-            
-                if (key & 0xFF) == ord("t"):
-                    cv2.destroyWindow("trapezoid")
+
 
     
         def clear(self):
@@ -125,8 +105,9 @@ def launch():
     
         def putPoint(self, e):
             self.c.create_oval(e.x - self.bs, e.y - self.bs, e.x + self.bs, e.y + self.bs, 
-                               outline='black', fill='black')
+                            outline='black', fill='black')
             self.pre = [e.x, e.y]
+
     
         def paint(self, e):
             self.c.create_line(self.pre[0], self.pre[1], e.x, e.y, width=self.bs * 2, 
