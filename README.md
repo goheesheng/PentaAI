@@ -23,3 +23,5 @@ Say goodbye to unproductive work and hello to a smarter way of learning with AI.
 
 # Sample
 
+![Alt text](https://github.com/goheesheng/PentaAI/blob/main/sample(1).png?raw=true)
+
