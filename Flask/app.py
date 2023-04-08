@@ -6,7 +6,7 @@ import PIL
 from PIL import ImageGrab # used to copy the contents of the screen
 import model # loading our model python file
 import cv2  #opencv library
-
+import os
 
 
 app = Flask(__name__) # initializing a flask app
@@ -97,7 +97,7 @@ def launch():
                 if (key & 0xFF) == ord("t"):
                     cv2.destroyWindow("triangle")
 
-
+            os.remove("dist.png")
 
     
         def clear(self):
